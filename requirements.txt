@@ -5,15 +5,22 @@ pdfplumber>=0.10.0
 python-docx>=0.8.11
 rdkit>=2022.9.5
 
+# 测试依赖
+pytest>=7.0.0
+pytest-mock>=3.10.0
+
 # 可选依赖（用于更好的时间戳格式）
 pandas>=1.5.0
 
+# 图像处理
+pillow>=9.0.0
+
 # OpenChemIE需要从源代码安装，不在此列出
-# 请参考 https://github.com/xxx/OpenChemIE
+# 请从我们的fork安装：https://github.com/XYZboom/OpenChemIE
 
 # 注意：OpenChemIE的依赖项包括：
 # - MolScribe
 # - RxnScribe  
 # - ChemRxnExtractor
 # - ChemIENER
-# 这些需要单独安装
+# 这些会通过OpenChemIE安装自动安装
