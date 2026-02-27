@@ -26,15 +26,45 @@
 - pandas >= 1.5.0（可选，用于更好的时间戳格式）
 
 ### OpenChemIE安装
-由于OpenChemIE尚未发布到PyPI，需要从源代码安装：
+由于OpenChemIE尚未发布到PyPI，需要从源代码安装。我们已经fork了OpenChemIE仓库到您的账户下：
 
 ```bash
-git clone https://github.com/xxx/OpenChemIE.git
+# 从您的fork安装OpenChemIE
+git clone https://github.com/XYZboom/OpenChemIE.git
 cd OpenChemIE
 pip install -e .
 ```
 
-**注意**：OpenChemIE有多个子模块依赖（MolScribe、RxnScribe、ChemRxnExtractor、ChemIENER），安装过程可能较复杂。建议参考项目文档。
+**注意**：OpenChemIE有多个子模块依赖（MolScribe、RxnScribe、ChemRxnExtractor、ChemIENER），安装过程可能较复杂。如果遇到依赖问题，请参考以下步骤：
+
+1. **安装系统依赖**：
+   ```bash
+   # Ubuntu/Debian
+   sudo apt-get update
+   sudo apt-get install python3-dev libpoppler-cpp-dev
+   
+   # macOS
+   brew install poppler
+   ```
+
+2. **手动安装子模块**（如果自动安装失败）：
+   ```bash
+   # 克隆子模块
+   git submodule update --init --recursive
+   
+   # 手动安装每个模块（在OpenChemIE目录下）
+   pip install -e ChemIENER-local/
+   pip install -e MolDetect-local/
+   pip install -e MolScribe-local/
+   pip install -e ChemRxnExtractor-local/
+   ```
+
+3. **常见问题解决**：
+   - **PyTorch版本冲突**：修改各模块的`setup.py`，移除`torch<2.0`限制
+   - **模型下载失败**：确保网络连接，或手动下载模型文件
+   - **LayoutParser错误**：代码中已包含回退机制，不影响核心功能
+
+更多安装细节请参考[OpenChemIE原始文档](https://github.com/CrystalEye42/OpenChemIE)。
 
 ## 快速开始
 
