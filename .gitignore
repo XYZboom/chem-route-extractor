@@ -1,0 +1,67 @@
+# 输出目录
+output/
+results/
+batch_output/
+test_output*/
+__pycache__/
+
+# 日志文件
+*.log
+*.log.*
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# 环境配置
+.env
+.venv
+venv/
+env/
+ENV/
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 数据文件
+*.json
+*.pkl
+*.pickle
+
+# PDF文件（输入文件）
+*.pdf
+
+# Word文档（输出文件）
+*.docx
+
+# 图像文件（生成的图像）
+*.png
+*.jpg
+*.jpeg
+
+# Python缓存
+*.py[cod]
+__pycache__/
+.pytest_cache/
+
+# 覆盖率报告
+.coverage
+htmlcov/
+
+# 包构建文件
+dist/
+build/
+*.egg-info/
+
+# 配置文件（可能包含敏感信息）
+config*.json

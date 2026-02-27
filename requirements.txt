@@ -1,0 +1,19 @@
+# ChemRouteExtractor 依赖包
+# 核心依赖
+torch>=2.0.0
+pdfplumber>=0.10.0
+python-docx>=0.8.11
+rdkit>=2022.9.5
+
+# 可选依赖（用于更好的时间戳格式）
+pandas>=1.5.0
+
+# OpenChemIE需要从源代码安装，不在此列出
+# 请参考 https://github.com/xxx/OpenChemIE
+
+# 注意：OpenChemIE的依赖项包括：
+# - MolScribe
+# - RxnScribe  
+# - ChemRxnExtractor
+# - ChemIENER
+# 这些需要单独安装
